@@ -2,7 +2,8 @@ clear all; close all; clc
 
 % filename
 % filename = 'C:\Users\Grid Lab\Documents\MATLAB\GoNoGo\'; % small computer
-filename = 'C:\Users\sunh20\Documents\Projects\gonogo\'; % sam's comupter
+% filename = 'C:\Users\sunh20\Documents\Projects\gonogo\'; % sam's comupter
+filename = 'C:\Users\eblab\Documents\Projects\gonogo\'; % nlx computer
 imgbasepath = filename;         % base path for images
 addpath(genpath(filename))       % add psychtoolbox things
 subjectID = input('subject ID? ','s');
