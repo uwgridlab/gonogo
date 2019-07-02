@@ -1,16 +1,15 @@
-clear ALL
+clear all; close all; clc
 
-%filename?
-filename = 'C:\Users\Grid Lab\Documents\MATLAB\GoNoGo\';
+% filename
+% filename = 'C:\Users\Grid Lab\Documents\MATLAB\GoNoGo\'; % small computer
+filename = 'C:\Users\sunh20\Documents\Projects\gonogo\'; % sam's comupter
+imgbasepath = filename;         % base path for images
+addpath(genpath(filename))       % add psychtoolbox things
 subjectID = input('subject ID? ','s');
 electrodeside = input('Electrode side? ', 's'); %electrode side of brain - use keyboard with other hand
 handedness = input('Hand used? ', 's');
 trialno = input('Trial number? '); %how many times have we run task
 filename = strcat(filename,subjectID, num2str(trialno));
-
-%base path for images?
-imgbasepath = 'C:\Users\Grid Lab\Documents\MATLAB\GoNoGo\';
-
 
 %which hand are we working with?
 % hand = input('Which hand are we working with? 0 for left, 1 for right: ');
@@ -34,11 +33,12 @@ imgbasepath = 'C:\Users\Grid Lab\Documents\MATLAB\GoNoGo\';
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Setup PTB with some default values
+%% Setup PTB with some default values
 PsychDefaultSetup(2);
 
-%give praise to rngesus and show our faith by seeding
-%may not be used but what the hey
+% give praise to rngesus and show our faith by seeding
+% may not be used but what the hey
+% lol did james write this 
 rng('shuffle')
 
 %set screen num to secondary monitor if one is connected
@@ -79,7 +79,7 @@ topPriorityLevel = MaxPriority(window);
 %Set blend function for the screen
 Screen('BlendFunction',window,'GL_SRC_ALPHA','GL_ONE_MINUS_SRC_ALPHA');
 
-%Init audio for timestamping
+% Init audio for timestamping
 % InitializePsychSound
 % InitializePsychSound(1)  %for really low latency
 
@@ -131,25 +131,23 @@ end
 
 numtrials = 7;
 numblocks = 7;
-% numblocks = 7;
 
-%init data matrices
+% init data matrices
 timestamps = nan(numtrials,5,numblocks);
-soundstamps = nan(numtrials,5,numblocks);
+% soundstamps = nan(numtrials,5,numblocks); % not using this rn
 subj_resp = cell(numtrials,numblocks);
 
-%randomize presentation
-%code considers each column of stim_inds to be index of trials for a block
+% randomize presentation
+% code considers each column of stim_inds to be index of trials for a block
 stim_inds = ones(numtrials,numblocks);
 
-%pick [numblocks] random integers from interval of [numtrials]
+% pick [numblocks] random integers from interval of [numtrials]
+% chooses random no-go indices - TODO make this adjustable 
 chosen = randi(numtrials,1,numblocks);
 
-%will only work for square stim_inds because I'm tired and lazy
+% will only work for square stim_inds because I'm tired and lazy
 for i = 1:length(chosen)
-    
     stim_inds(chosen(i),i) = 0;
-    
 end
 
 %1 in stim_ind is go trial, 0 is NoGo trial
@@ -366,7 +364,6 @@ for block = 1:numblocks
 end
 
 % PsychPortAudio('Close');
-        
 
 DrawFormattedText(window, 'Thanks for playing!',...
     'center', 'center', white);
@@ -402,21 +399,3 @@ ShowCursor;
 sca;
 
 save(filename)
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
