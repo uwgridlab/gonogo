@@ -5,7 +5,7 @@
 
 An image of a bear or lion will appear one at a time on the screen, and the participant is instructed to press the spacebar as soon as they see an image of a lion and do nothing when a bear appears. 
 
-Running this code requires installation of Psychtoolbox (necessary files included in the repo)
+Running this code requires installation of Psychtoolbox and other software. Full instructions [here](http://psychtoolbox.org/download.html#upgrading)
 
 To run this code, navigate to the directory and open **GoNoGo.m**. This code contains parameters that the user can change based on the system that the code is being run on. After running the code, it will ask you to navigate to a data save directory and then proceed to run the task. To exit the task at any time, press the "Esc" key.
 
