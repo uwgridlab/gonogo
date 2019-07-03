@@ -1,4 +1,4 @@
-function GoNoGo_main(system, numblocks, numtrials)
+function GoNoGo_main(photod_loc, numblocks, numtrials)
 
 % Notes: 
 % This is a cut version of the GoNoGo_avstamp.m file, deleted commented
@@ -86,10 +86,14 @@ dstRect = CenterRectOnPointd(dstRect, xCenter, yCenter);
 % NLX - rectangle on lower left corner
 ts_s1 = round(screenXpixels/20);
 tsdstRect = [0 0 ts_s1 ts_s1]; 
-if system == 1  % NLX
+if photod_loc == 'L'
     tsdstRect = CenterRectOnPointd(tsdstRect, round(ts_s1/2), screenYpixels-round(ts_s1/2));
-else            % not NLX
+elseif photod_loc == 'R'
     tsdstRect = CenterRectOnPointd(tsdstRect, screenXpixels-round(ts_s1/2), screenYpixels-round(ts_s1/2));
+else
+    disp('Error: please check photod_loc variable and ensure it is either R or L')
+    clear all % to exit screen
+    return
 end
 
 % Here we check if the image is too big to fit on the screen and abort if
