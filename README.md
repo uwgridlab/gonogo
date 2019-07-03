@@ -15,6 +15,10 @@ Notes:
 - "handedness" variable indicates which hand pt is using for that trial, Kelly recommends doing 2x for each hand (4 trials total)
 - There used to be an audio input version where we ask subject to verbally say "lion" or "bear" into a microphone input
 
+Troubleshooting:
+- If Screen() isn't working, may need to update graphics card to most recent version (+ reset)
+- If the text in the program looks wonky, then you might need to install [GStreamer](http://gstreamer.freedesktop.org/download/)
+
 TODO:
 - make ratio of go-no go adjustable ~ line 119 in GoNoGo_main.m
 - right now it's hardcoded such that numblocks and numtrials MUST be the same, so make this more flexible ~ line 123 in GoNoGo_main.m
