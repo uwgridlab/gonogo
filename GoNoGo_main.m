@@ -85,7 +85,7 @@ dstRect = CenterRectOnPointd(dstRect, xCenter, yCenter);
 % childrens - rectangle on lower right corner
 % NLX - rectangle on lower left corner
 ts_s1 = round(screenXpixels/20);
-tsdstRect = [0 0 ts_s1 ts_s1];
+tsdstRect = [0 0 ts_s1 ts_s1]; 
 if system == 1  % NLX
     tsdstRect = CenterRectOnPointd(tsdstRect, round(ts_s1/2), screenYpixels-round(ts_s1/2));
 else            % not NLX
@@ -203,7 +203,7 @@ for block = 1:numblocks
         % timestamp trial start
 %         timestamps(trial,1,block) = GetSecs; % TODO what happened here?
         Screen('FillRect',window,black);
-        Screen('FillRect', window, white, tsdstRect);
+        Screen('FillRect', window, white, tsdstRect); % flash
         [timestamps(trial,1,block),~,~,~,~] = Screen('Flip', window);
         
         % Cue to determine whether a response has been made
@@ -214,7 +214,7 @@ for block = 1:numblocks
         % timestamp fix presentation
         Screen('DrawLines', window, fixCoords,...
             lineWidthPix, white, [xCenter yCenter], 2);
-        Screen('FillRect', window, white, tsdstRect);
+        Screen('FillRect', window, white, tsdstRect); % flash 
         [timestamps(trial,2,block),~,~,~,~] = Screen('Flip', window);
         
         % Now we present the hold interval with fixation point minus one frame
@@ -233,7 +233,7 @@ for block = 1:numblocks
         if stim_inds(trial,block)==1  %Go trial - lions are go
             
             Screen('DrawTexture', window, lion_texture, [], dstRect, 0);
-            Screen('FillRect', window, white, tsdstRect);
+            Screen('FillRect', window, white, tsdstRect); % flash
             [timestamps(trial,3,block),~,~,~,~] = Screen('Flip', window);
             
             spTimeFramescheck = 1;
@@ -250,7 +250,7 @@ for block = 1:numblocks
                     subj_resp{trial,block} = 'G';
                     timestamps(trial,4,block) = secs;
                     Screen('DrawTexture', window, lion_texture, [], dstRect, 0);
-                    Screen('FillRect', window, white, tsdstRect);
+                    Screen('FillRect', window, white, tsdstRect); % flash 
                     Screen('Flip', window);
                     respToBeMade = false;
                 end
@@ -265,7 +265,7 @@ for block = 1:numblocks
         else  % NoGo trial - bears are NoGo
             
             Screen('DrawTexture', window, bear_texture, [], dstRect, 0);
-            Screen('FillRect', window, white, tsdstRect);
+            Screen('FillRect', window, white, tsdstRect); % flash
             [timestamps(trial,3,block),~,~,~,~] = Screen('Flip', window);
             
             spTimeFramescheck = 1;
@@ -282,7 +282,7 @@ for block = 1:numblocks
                     subj_resp{trial,block} = 'G';
                     timestamps(trial,4,block) = secs;
                     Screen('DrawTexture', window, bear_texture, [], dstRect, 0);
-                    Screen('FillRect', window, white, tsdstRect);
+                    Screen('FillRect', window, white, tsdstRect); % flash 4 (?) times?
                     Screen('Flip', window);
                     respToBeMade = false;
                 end
@@ -296,7 +296,7 @@ for block = 1:numblocks
         end
         
         Screen('FillRect',window,black);
-        Screen('FillRect', window, white, tsdstRect);
+        Screen('FillRect', window, white, tsdstRect); % flash
         [timestamps(trial,5,block),~,~,~,~] = Screen('Flip', window);
         disp(trial)
         
