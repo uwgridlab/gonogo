@@ -7,6 +7,8 @@ An image of a bear or lion will appear one at a time on the screen, and the part
 
 Running this code requires installation of Psychtoolbox and other software. Full instructions [here](http://psychtoolbox.org/download.html#upgrading). MUST install GStreamer + follow directions VERY CAREFULLY or be prepared for lots of headaches (I did it so you don't have to).
 
+Alternatively, you can download the ZIP file in the [GridLabGradKids Shared Drive](https://drive.google.com/drive/u/1/folders/0AEG4iQaImNUJUk9PVA) (contact someone for access). Unzip these files in the directory the MATLAB code is in and make sure they are added to your path. 
+
 
 To run this code, navigate to the directory and open **GoNoGo.m**. This code contains parameters that the user can change based on the system that the code is being run on. After running the code, it will ask you to navigate to a data save directory and then proceed to run the task. To exit the task at any time, press the "Esc" key.
 
