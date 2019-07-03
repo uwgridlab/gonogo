@@ -9,7 +9,7 @@ Running this code requires installation of Psychtoolbox (necessary files include
 
 To run this code, navigate to the directory and open **GoNoGo.m**. This code contains parameters that the user can change based on the system that the code is being run on. After running the code, it will ask you to navigate to a data save directory and then proceed to run the task. To exit the task at any time, press the "Esc" key.
 
-The original code is GoNoGo_avstamp.m (with minor modifications) and can be run standalone. 
+The original code is GoNoGo_avstamp.m (with minor modifications) and can be run standalone. Make sure you change the filename variable to the gonogo directory on your computer.
 
 Notes:
 - "handedness" variable indicates which hand pt is using for that trial, Kelly recommends doing 2x for each hand (4 trials total)
