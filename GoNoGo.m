@@ -8,8 +8,8 @@ disp("Make sure you run this file while you're in the gonogo directory!!!")
 %           sam's computer = 2
 
 system = 2;
-numblocks = 7; % default = 7 *** NOTE: numblocks MUST BE EQUAL TO numtrials
-numtrials = 7; % default = 7 *** until sam fixes the code because whoever
+numblocks = 2; % default = 7 *** NOTE: numblocks MUST BE EQUAL TO numtrials
+numtrials = 2; % default = 7 *** until sam fixes the code because whoever
 %                                coded this task was lazy 
 
 % run task

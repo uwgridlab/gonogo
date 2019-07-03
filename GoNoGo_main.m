@@ -14,12 +14,12 @@ disp('This will be where the output data files will go')
 path_data = uigetdir;
 
 addpath(genpath('Psychtoolbox')) % make sure Psychtoolbox is added to path
-imgbasepath = pwd;  % base path for images
+imgbasepath = strcat(pwd,'\');  % base path for images
 subjectID = input('subject ID? ','s');
 electrodeside = input('Electrode side? ', 's'); % electrode side of brain - use keyboard with other hand
 handedness = input('Hand used? ', 's');
 trialno = input('Trial number? '); % how many times have we run task
-filename = strcat(path_data,subjectID,num2str(trialno));
+filename = strcat(path_data,'\',subjectID,num2str(trialno));
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Setup PTB with some default values
@@ -61,7 +61,7 @@ Screen('TextFont', window, 'Ariel');
 %Set blend function for the screen
 Screen('BlendFunction',window,'GL_SRC_ALPHA','GL_ONE_MINUS_SRC_ALPHA');
 
-HideCursor
+% HideCursor
 
 %load images
 bear_imgloc = strcat(imgbasepath,'bear.jpg');
