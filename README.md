@@ -1,5 +1,6 @@
 # Go/No Go task implemented using Psychtoolbox-3 
 *Created by Kelly Collins + James Wu + potentially others*
+
 *Modified by Samantha Sun*
 
 An image of a bear or lion will appear one at a time on the screen, and the participant is instructed to press the spacebar as soon as they see an image of a lion and do nothing when a bear appears. 
@@ -18,3 +19,4 @@ TODO:
 - make ratio of go-no go adjustable ~ line 119 in GoNoGo_main.m
 - right now it's hardcoded such that numblocks and numtrials MUST be the same, so make this more flexible ~ line 123 in GoNoGo_main.m
 - figure out what the timestamps variable does + why some are commented out
+- pick only useful variables to save into file, right now it's just saving everything in the workspace
