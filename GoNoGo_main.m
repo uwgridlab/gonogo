@@ -9,8 +9,8 @@ function GoNoGo_main(system, numblocks, numtrials)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-disp('Please navigate to subject data folder\n')
-disp('This will be where the output data files will go\n')
+disp('Please navigate to subject data folder')
+disp('This will be where the output data files will go')
 path_data = uigetdir;
 
 addpath(genpath('Psychtoolbox')) % make sure Psychtoolbox is added to path
@@ -201,7 +201,7 @@ for block = 1:numblocks
     for trial = 1:numtrials
         
         % timestamp trial start
-%         timestamps(trial,1,block) = GetSecs; % TODO what happened here?
+        % timestamps(trial,1,block) = GetSecs; % TODO what happened here?
         Screen('FillRect',window,black);
         Screen('FillRect', window, white, tsdstRect); % flash
         [timestamps(trial,1,block),~,~,~,~] = Screen('Flip', window);

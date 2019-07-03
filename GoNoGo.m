@@ -1,6 +1,6 @@
 function GoNoGo
 
-disp("Make sure you run this file while you're in the gonogo directory!!!\n")
+disp("Make sure you run this file while you're in the gonogo directory!!!")
 %%%%% define parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % system - position of photodiode may change with different systems
 %           childrens device = 0
