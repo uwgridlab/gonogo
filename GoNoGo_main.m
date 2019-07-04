@@ -13,7 +13,6 @@ disp('Please navigate to subject data folder')
 disp('This will be where the output data files will go')
 path_data = uigetdir;
 
-addpath(genpath('Psychtoolbox')) % make sure Psychtoolbox is added to path
 imgbasepath = strcat(pwd,'\');  % base path for images
 subjectID = input('subject ID? ','s');
 electrodeside = input('Electrode side? ', 's'); % electrode side of brain - use keyboard with other hand
