@@ -30,8 +30,8 @@ PsychDefaultSetup(2);
 rng('shuffle')
 
 %set screen num to secondary monitor if one is connected
-screenNumber = max(Screen('Screens'));
-% screenNumber = 1;  %weirdness with how tms task computer assigns window numbers
+% screenNumber = max(Screen('Screens'));
+screenNumber = 1; % hardcode for nlx computer
 
 %define black, white and grey
 white = WhiteIndex(screenNumber);
