@@ -26,5 +26,3 @@ TODO:
 - make ratio of go-no go adjustable ~ line 119 in GoNoGo_main.m
 - right now it's hardcoded such that numblocks and numtrials MUST be the same, so make this more flexible ~ line 123 in GoNoGo_main.m
 - figure out what the timestamps variable does + why some are commented out
-- pick only useful variables to save into file, right now it's just saving everything in the workspace
-- make test version that runs without saving 

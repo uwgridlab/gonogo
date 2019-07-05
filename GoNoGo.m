@@ -8,13 +8,13 @@ disp("Make sure you run this file while you're in the gonogo directory!!!")
 %              nlx device = left/L
 % numblocks - number of blocks
 % numtrials - number of trials in a block
-
-photod_loc = 'L'; % responses = 'R' or 'L'
-numblocks = 2; % default = 7 *** NOTE: numblocks MUST BE EQUAL TO numtrials
-numtrials = 2; % default = 7 *** until sam fixes the code because whoever
-%                                coded this task was lazy 
+saveOn = 0;         % true = 1, false = 0
+photod_loc = 'L';   % responses = 'R' or 'L'
+numblocks = 2;      % default = 7 *** NOTE: numblocks MUST BE EQUAL TO numtrials
+numtrials = 2;      % default = 7 *** until sam fixes the code because whoever
+                    % coded this task was lazy 
 
 % run task
-GoNoGo_main(photod_loc, numblocks, numtrials)
+GoNoGo_main(saveOn, photod_loc, numblocks, numtrials)
 
 end
