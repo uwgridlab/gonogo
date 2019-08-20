@@ -35,7 +35,7 @@ figure;
 plot(t_BNC,data_BNC)
 xlabel('Time (s)')
 ylabel('Voltage (uV)')
-title('BNC21 - Button press information')
+title('BNC21 - Photodiode/key press information')
 
 figure;
 plot(t_ECOG,data_ECOG*1e6)
@@ -43,10 +43,7 @@ xlabel('Time (s)')
 ylabel('Voltage (uV)')
 title('Grid1 - ECoG Grid Ch 1')
 
-%% check out trial information
-
-
-%% filter ecog data (grid only for now)
+%% filter ecog data - motor electrodes (grid only for now)
 
 filt_test = filt_neuro(data_ECOG,fs_ECOG);
 figure
@@ -57,6 +54,4 @@ legend('pre filt','post filt')
 xlabel('Time (s)')
 ylabel('Voltage (uV)')
 
-
-%% dividing data into epochs
-% 200ms before stim onset + 200ms after button press
+% pick electrode for motor regions + examine them
