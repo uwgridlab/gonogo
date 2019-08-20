@@ -1,4 +1,4 @@
-function GoNoGo_main(photod_loc, numblocks, numtrials)
+function GoNoGo_main(saveOn, photod_loc, numblocks, numtrials)
 
 % Notes: 
 % This is a cut version of the GoNoGo_avstamp.m file, deleted commented
@@ -8,12 +8,10 @@ function GoNoGo_main(photod_loc, numblocks, numtrials)
 % in order to run. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 disp('Please navigate to subject data folder')
 disp('This will be where the output data files will go')
 path_data = uigetdir;
 
-addpath(genpath('Psychtoolbox')) % make sure Psychtoolbox is added to path
 imgbasepath = strcat(pwd,'\');  % base path for images
 subjectID = input('subject ID? ','s');
 electrodeside = input('Electrode side? ', 's'); % electrode side of brain - use keyboard with other hand
@@ -31,8 +29,8 @@ PsychDefaultSetup(2);
 rng('shuffle')
 
 %set screen num to secondary monitor if one is connected
-screenNumber = max(Screen('Screens'));
-% screenNumber = 1;  %weirdness with how tms task computer assigns window numbers
+% screenNumber = max(Screen('Screens'));
+screenNumber = 1; % hardcode for nlx computer
 
 %define black, white and grey
 white = WhiteIndex(screenNumber);
@@ -214,7 +212,7 @@ for block = 1:numblocks
         respToBeMade = true;
         
         % Flip again to sync to vertical retrace at same time as drawing
-        %fixation cross
+        % fixation cross
         % timestamp fix presentation
         Screen('DrawLines', window, fixCoords,...
             lineWidthPix, white, [xCenter yCenter], 2);
@@ -315,5 +313,7 @@ KbStrokeWait;
 ShowCursor;
 sca;
 
-save(filename)
+if saveOn == 1
+    save(filename,'electrodeside','handedness','numblocks','numtrials','stim_inds','subj_resp','subjectID','timestamps')
+end
 end
